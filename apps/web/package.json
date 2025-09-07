@@ -1,0 +1,44 @@
+{
+  "name": "@tg-media-vault/web",
+  "description": "Shows media content via browser",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "dependencies": {
+    "@mui/icons-material": "^6.4.11",
+    "@mui/material": "^6.4.11",
+    "axios": "^1.8.4",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.1",
+    "dayjs": "^1.11.13",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.11",
+    "react-router-dom": "6.15.0",
+    "reflect-metadata": "0.2.2",
+    "swr": "2.2.1",
+    "vite-plugin-svgr": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.64.10",
+    "@types/pluralize": "^0.0.33",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^8.47.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^6.0.11"
+  }
+}
