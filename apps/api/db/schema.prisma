@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("PG_CONNECTION_URL")
+}
+
+model Content {
+  id             Int       @id(map: "content_pk") @default(autoincrement())
+  offset         Int
+  channelId      BigInt
+  userId         BigInt
+  messageId      BigInt
+  filePath       String?
+  status         String
+  statusMessage  String?
+  downloadedAt   DateTime?
+  channelMessage String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @default(now()) @updatedAt
+}

@@ -1,0 +1,5 @@
+export enum ContentItemStatus {
+  CREATED = 'CREATED',
+  DOWNLOAD_SUCCESS = 'DOWNLOAD_SUCCESS',
+  DOWNLOAD_FAIL = 'DOWNLOAD_FAIL',
+}
