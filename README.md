@@ -1,5 +1,9 @@
 # TG Media Vault
 
+<div align="center">
+  <img src="docs/images/logo.png" width="500"/>
+</div>
+
 The TG Media Vault is a system that saves your media content _(images & videos)_ from telegram group, where the telegram bot is joined in.
 The system provides a web interface to show your media content in a browser.
 
@@ -64,4 +68,6 @@ docker compose up postgres -d
 ## TODOs
 
 1. Implement error logging
-2. Implement Telegram MTProto Provider to avoid Telegram Bot API 20MB item download limit.
+2. Implement Telegram MTProto Provider to avoid Telegram Bot API 20MB item download limit
+3. Make SVG favicon _(currently it's just a draft)_
+4. Add more test cases
