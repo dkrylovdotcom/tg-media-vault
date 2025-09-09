@@ -3,6 +3,7 @@ import TelegramBot, { Message } from 'node-telegram-bot-api';
 import fs from 'fs';
 import https from 'https';
 import path from 'path';
+import { TelegramPollingError } from '../interfaces/telegram-polling-error.interface';
 
 export class TelegramBotProvider {
   private readonly bot: TelegramBot;
@@ -34,8 +35,13 @@ export class TelegramBotProvider {
         url: this.telegramApiUrl,
       },
     });
-    this.bot.on('polling_error', (msg) => {
-      this.logger.error(`Polling Error: ${JSON.stringify(msg)}`);
+    this.bot.on('polling_error', async (errorMessage) => {
+      this.logger.error(`Polling Error: ${JSON.stringify(errorMessage)}`);
+
+      // NOTE:: Resolves "Polling Error: ("code":"EFATAL", 'message": "EFATAL: Error: read ECONNRESET"}"
+      if (this.shouldBeRestarted(errorMessage as unknown as TelegramPollingError)) {
+        await this.restartPolling();
+      }
     });
     this.logger.log('🤖 Telegram bot initialized');
   }
@@ -43,6 +49,12 @@ export class TelegramBotProvider {
   public getBot(): TelegramBot {
     return this.bot;
   }
+
+  public async restartPolling(): Promise<void> {
+    await this.bot.stopPolling();
+    await this.bot.startPolling();
+  }
+
 
   public getCurrentOffset(): number {
     // NOTE:: Workaround. There is no way to get offset, coz no events catched from "on('update', () => {})" in node-telegram-bot-api library
@@ -90,5 +102,11 @@ export class TelegramBotProvider {
         });
       }).on('error', reject);
     });
+  }
+
+  private shouldBeRestarted(errorMessage: TelegramPollingError): boolean {
+    return errorMessage.code === 'EFATAL' ||
+          errorMessage.message.includes('ENOTFOUND') ||
+          errorMessage.message.includes('ECONNRESET');
   }
 }
