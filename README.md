@@ -71,5 +71,5 @@ docker compose up postgres -d
 
 1. Implement error logging
 2. Implement Telegram MTProto Provider to avoid Telegram Bot API 20MB item download limit
-3. Make SVG favicon _(currently it's just a draft)_
+3. Make SVG favicon for web app _(currently it's just a draft)_
 4. Add more test cases
