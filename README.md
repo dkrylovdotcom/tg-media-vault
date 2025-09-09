@@ -9,18 +9,20 @@ The system provides a web interface to show your media content in a browser.
 
 ## Why the TG Media Vault?
 
-All of us have smartphones that is used to create important photos & videos that represents our long-life memory.
-The smartphones has limited storage space. The smartphones could be broken by any reasons. The smartphones are getting old, and when it happens we need to save our media content to not lose it.
+- All of us have smartphones that is used to create important photos & videos that represents our long-life memory.
+- The smartphones has limited storage space. The smartphones could be broken by any reasons.
+- The smartphones are getting old, and when it happens we need to save our media content to not lose it.
 
 ## Why to not use a public cloud?
 
 - The public cloud may have no access without the internet connection or government restrictions.
 - The public cloud storage is a shareware/freemium — "Use only 5GB of the storage free, if you want more just pay us"
+- You want to select photos or videos that should be saved to omit saving really private media content that you wouldn't to share with anyone
 - Telegram offers unlimited cloud storage for all users, meaning you can store as many files as you want, as long as they are below the per-file size limit.
 - There's a 2GB file size limit per file for regular users, and Telegram Premium users can send files up to 4GB. _(actual for 2025 year)_
 - Telegram is a familiar way of sending media content not only to the younger, but also to older generation _(parents / grandparents)_
 
-The TG Media Vault system is cost saving approach that is using both of the public & private storage advantages by storing media content in the Telegram & hardware storage.
+The TG Media Vault system is cost saving approach that is using both of the public & private storage advantages by storing media content in the Telegram & hardware storage.  
 The presence of two distributed storage locations increases the likelihood of continuous data availability in the event of a failure of one node.
 
 BTW, if you need an additional layer of storage resilience, you may use some solution to make copies, like [rsync](https://linux.die.net/man/1/rsync).
